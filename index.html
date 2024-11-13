@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+    <script> window.chtlConfig = { chatbotId: "2956382455" } </script>
+    <script async data-id="2956382455" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+  
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="agenda_logo.jpg" alt="company logo">
+            </a>
+
+            
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="india" onclick="onNavItemClick('india')">India</li>
+                    <li class="hover-link nav-item" id="world" onclick="onNavItemClick('world')">World</li>
+                    <li class="hover-link nav-item" id="movie" onclick="onNavItemClick('movie')">Movie</li>
+                    <li class="hover-link nav-item" id="technology" onclick="onNavItemClick('technology')">Technology</li>
+                    <li class="hover-link nav-item" id="bussiness" onclick="onNavItemClick('bussiness')">Business</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                </ul>
+            </div>
+            
+            <div class="search-bar flex">
+                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                <button id="search-button" class="search-button">Search</button>
+                
+            </div>
+       
+            
+        </div>
+    </nav>
+
+    <main>
+        <div class="cards-container container flex" id="cards-container"></div>
+    </main>
+
+    <div class="floating-follow-us">
+        
+        <a target="_blank" href="https://www.instagram.com/_anurag_kumar_01" class="fab fa-instagram"></a>
+        <a target="_blank" href="https://www.linkedin.com/in/anurag-kumar-ab671528a/" class="fab fa-linkedin"></a>
+        <a target="_blank" href="https://github.com/AnuragkumarThakur1" class="fab fa-github"></a>
+        <a href="#" class="fas fa-envelope" onclick="scrollToContact()"></a>
+        <a href="#" onclick="postNews()"><i class="fas fa-plus"></i></a>
+    
+         <!-- Scroll to Down Button -->
+          <button onclick="scrollToFooter()" class="scroll-to-down">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    
+   
+
+
+    
+    
+
+    <!-- News Submission Modal -->
+    <div class="modal" id="news-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Submit Your News</h2>
+            <form id="news-form">
+                <input type="text" name="news-title" placeholder="News Title" required>
+                <textarea name="news-content" rows="5" placeholder="Write your news here..." required></textarea>
+                <input type="text" name="news-author" placeholder="Author Name" required>
+                <input type="file" name="news-image" id="news-image" accept="image/*" required>
+                <button type="submit">Submit News</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" name="contact-name" placeholder="Your Name" required>
+                <input type="email" name="contact-email" placeholder="Your Email" required>
+                <input type="mobile" name="mobile" placeholder="Your Mobile" required>
+                <textarea name="contact-message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title"></h3>
+                <h6 class="news-source" id="news-source"></h6>
+                <p class="news-desc" id="news-desc"></p>
+            </div>
+        </div>
+    </template>
+    
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="#home">Home</a>
+                <a href="# Post News" onclick="postNews()"></i> Post News</a>
+                <a href="#" onclick="scrollToContact()">Contact Us</a>
+            </div>
+
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#contact">Ask Questions</a>
+                <a href="#">Terms Of Use</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="tel:+9100000000000"> <i class="fas fa-phone"></i> +91 011236324</a>
+                <a href="mailto: Agenda@gmail.com"> <i class="fas fa-envelope"></i> Agenda@gmail.com </a>
+                <a href="#"> <i class="fas fa-map"></i> New Delhi, india - 110001 </a>
+            </div>
+
+           
+        </div>
+        <div class="credit">created by <span>Agenda</span> | all rights reserved!</div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

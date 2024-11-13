@@ -1,0 +1,537 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav {
+    background-color: #f3faff;
+    box-shadow: 0 0 4px #bbd0e2;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.company-logo img {
+    width: 120px;
+}
+
+.nav-links ul {
+    gap: 16px;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--secondary-text-color);
+}
+
+.hover-link:active {
+    color: red;
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.search-bar {
+    height: 32px;
+    gap: 8px;
+}
+
+.news-input {
+    width: 200px;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 2px solid #bbd0e2;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+
+
+/* Post News Button Styling */
+.post-news-button button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.post-news-button button:hover {
+    background-color: var(--accent-color-dark);
+}
+/* Post News Button Styling */
+.post-news-button button,
+.contact-us-button button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.post-news-button button:hover,
+.contact-us-button button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+.floating-follow-us {
+    position: fixed;
+    top: 50%;
+    right: 20px; /* Adjust the distance from the right */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    background-color: #fff; /* Optional: Add a background color */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+.floating-follow-us a {
+    font-size: 24px; /* Increase the size of the icons */
+    color: var(--accent-color); /* Your accent color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.floating-follow-us a:hover {
+    color: var(--accent-color-dark); /* Darker shade on hover */
+}
+
+
+
+
+
+
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Max width for larger screens */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--primary-text-color);
+    text-align: center;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #bbd0e2;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+.post-news-contact-container {
+    display: flex;
+    gap: 10px; /* Adjust gap between the two buttons */
+    margin-left: auto; /* Aligns the container to the right */
+}
+
+.post-news-button,
+.contact-us-button {
+    margin: 0;
+}
+
+.post-news-button button,
+.contact-us-button button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.post-news-button button:hover,
+.contact-us-button button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+
+
+/* Modal Styling (Contact Form) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Max width for larger screens */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--primary-text-color);
+    text-align: center;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #bbd0e2;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+.cards-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+.card {
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px #d4ecff;
+    background-color: #f9fdff;
+    transform: translateY(-2px);
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.news-source {
+    margin-block: 12px;
+}
+
+
+/* Footer styles */
+.footer {
+    background-color: #183b56; /* Darker blue */
+    color: white;
+    padding: 60px 20px; /* Increased padding */
+    margin-top: 40px;
+    text-align: center; /* Center text alignment */
+}
+
+.footer .box-container {
+    display: flex;
+    justify-content: center; /* Center content */
+    flex-wrap: wrap;
+    gap: 40px; /* Increased gap between boxes */
+}
+
+.footer .box {
+    flex-basis: calc(25% - 20px);
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    padding: 20px; /* Padding inside boxes */
+    border-radius: 10px; /* Rounded corners for boxes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.footer .box h3 {
+    font-size: 20px; /* Increased font size */
+    margin-bottom: 20px; /* Space below headings */
+    text-transform: uppercase;
+    color: var(--accent-color); /* Use accent color for headings */
+}
+
+.footer .box a {
+    display: block;
+    color: #ffffff; /* Link color */
+    font-size: 16px; /* Uniform link size */
+    margin-bottom: 12px;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.footer .box a:hover {
+    color: var(--accent-color); /* Hover color */
+}
+
+.footer .credit {
+    text-align: center;
+    margin-top: 30px; /* Space above credit section */
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer .credit span {
+    color: var(--accent-color); /* Use accent color for credit text */
+}
+/* Adjust the floating follow-us container to be fixed further below the header */
+.floating-follow-us {
+    position: fixed;
+    top: 150px; /* Further down from the header */
+    right: 20px; /* Fixed on the right side */
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: 15px; /* Space between icons */
+    z-index: 1000;
+    background-color: #fff; /* Optional: background color */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Style for all icons in the floating-follow-us container, including Scroll to Down */
+.floating-follow-us a,
+.floating-follow-us .scroll-to-down {
+    font-size: 24px; /* Fixed icon size */
+    color: var(--accent-color); /* Accent color for icons */
+    text-decoration: none;
+    width: 40px;  /* Icon width */
+    height: 40px; /* Icon height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Circle shape */
+    background-color: #fff;
+    border: 2px solid var(--accent-color); /* Border for all icons */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /* Smooth transition for color and border */
+}
+
+/* Hover effect for all icons in the floating-follow-us container */
+.floating-follow-us a:hover,
+.floating-follow-us .scroll-to-down:hover {
+    background-color: var(--accent-color); /* Change background on hover */
+    color: #fff; /* Change icon color on hover */
+    border-color: var(--accent-color-dark); /* Darker border on hover */
+}
+
+
+
+/* Rounded corners for Search Button */
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+/* Rounded corners for Post News and Contact Us Buttons */
+.post-news-button button,
+.contact-us-button button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.post-news-button button:hover,
+.contact-us-button button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+/* Rounded corners for Footer Button */
+.footer-button button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.footer-button button:hover {
+    background-color: var(--accent-color-dark);
+}
+
